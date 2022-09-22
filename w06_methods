@@ -1,34 +1,29 @@
 void setup() 
 {
   size(400,400);
-  background(100);
-  looop(width/2,height/2);
+  ooo(width/2,height/2);
 }
 
-void looop (int x, int y)
+void ooo (int x, int y)
 {
-fill(0);
-circle(x, y, 300);
-fill(250);
-circle(x, y, 275);
-fill(0);
-circle(x, y, 250);
-fill(250);
-circle(x, y, 225);
-fill(0);
-circle(x, y, 200);
-fill(250);
-circle(x, y, 175);
-fill(0);
-circle(x, y, 150);
-fill(250);
-circle(x, y, 125);
-fill(0);
-circle(x, y, 100);
-fill(250);
-circle(x, y, 75);
-fill(0);
-circle(x, y, 50);
-fill(250);
-circle(x, y, 25);
+  fill(0);
+  circle(x, y, 100);
+  fill(250);
+  circle(x, y, 90);
+  fill(0);
+  circle(x, y, 80);
+  fill(250);
+  circle(x, y, 70);
+  fill(0);
+  circle(x, y, 60);
+  fill(250);
+  circle(x, y, 50);
+  fill(0);
+  circle(x, y, 40);
+  fill(250);
+  circle(x, y, 30);
+  fill(0);
+  circle(x, y, 20);
+  fill(250);
+  circle(x, y, 10);
 }
