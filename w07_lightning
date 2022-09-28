@@ -1,0 +1,8 @@
+void drawLightning(int x, int y, int numParts) {
+  y = 0;
+  numParts = 50;
+  while(y > 500) {
+    random
+  }
+}
+[x - 5, x + 5]
