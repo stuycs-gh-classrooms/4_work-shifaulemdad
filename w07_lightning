@@ -1,8 +1,18 @@
 void drawLightning(int x, int y, int numParts) {
+  line(x,y,nextx,nexty)
+  x=nextx;
+  y=nexty;
+  }
+void setup() {
+  size (600,600)
+  while () {
+  background (0)
+}
+}
   y = 0;
   numParts = 50;
   while(y > 500) {
-    random
+    random [x - 5, x + 5]
   }
 }
-[x - 5, x + 5]
+x = [x - 5, x + 5]
