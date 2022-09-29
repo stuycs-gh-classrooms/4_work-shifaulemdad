@@ -1,0 +1,16 @@
+fill(250);
+circle(600, 400, 175);
+fill(0);
+circle(600, 400, 150);
+fill(250);
+circle(600, 400, 125);
+fill(0);
+circle(600, 400, 100);
+fill(250);
+circle(600, 400, 75);
+fill(0);
+circle(600, 400, 50);
+fill(250);
+circle(600, 400, 25);
+fill(0);
+circle(600, 400, 0);
