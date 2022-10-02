@@ -18,7 +18,7 @@ void circleRow(int startX, int endX, int y, int d){
     movingY = 150;
   }
   else if (movingX > 450){
-    movingY += 100;//change to 0 to not move down
+    movingY += 100; //change to 0 to not move down
     movingX = 50;
   }
   else{
