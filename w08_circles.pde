@@ -14,17 +14,17 @@ void circleRow(int startX, int endX, int y, int d){
     circle(startX,y,d);
     startX += d;
   }
-  if (movingY >500){
+  if (movingY > 500){
     movingY=150;
   }
-  else if (movingX>450){
-    movingY=movingY+100;
-    movingX=50;
+  else if (movingX > 450){
+    movingY += 100;
+    movingX = 50;
   }
   else{
     fill(#ff00ff);
     circle(movingX, movingY, 2*radius); 
-    movingX=movingX+10;
+    movingX += 10;
   }
 }//circleRow
 
