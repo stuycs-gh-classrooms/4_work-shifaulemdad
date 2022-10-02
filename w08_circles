@@ -20,11 +20,11 @@ void circleRow(int d) {
     movingX += 100;
     movingY = 50;
   } else {
-    fill(250);
-    circle(movingX, movingY, 100);
     fill(0);
-    circle(movingX, movingY, 90);
+    circle(movingX, movingY, 100);
     fill(250);
+    circle(movingX, movingY, 90);
+    fill(0);
     circle(movingX, movingY, 80);
     fill(250);
     circle(movingX, movingY, 70);
@@ -42,7 +42,7 @@ void circleRow(int d) {
     circle(movingX, movingY, 10);
     //fill(#ff00ff);
     //circle(movingX, movingY, 2*radius);
-    movingY += 100;//speed
+    movingY += 1;//speed
   }
 }//circleRow
 
