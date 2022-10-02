@@ -18,13 +18,13 @@ void circleRow(int startX, int endX, int y, int d){
     movingY = 150;
   }
   else if (movingX > 450){
-    movingY += 100; //change to 0 to not move down
+    movingY += 100; // To not move down, change "100" to "0"
     movingX = 50;
   }
   else{
     fill(#ff00ff);
     circle(movingX, movingY, 2*radius);
-    movingX += 100;
+    movingX += 10; // To wrap around vertically, change "movingX" to "movingY"
   }
 }//circleRow
 
