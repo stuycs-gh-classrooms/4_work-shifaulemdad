@@ -10,7 +10,7 @@ void setup() {
 }//setup
 
 void circleRow(int startX, int endX, int y, int d) {
-  while (startX <= endX) {
+  while (startX < width) {
     circle(startX, y, d);
     startX += d;
   }
