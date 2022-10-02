@@ -9,12 +9,12 @@ void setup() {
   movingY = radius*3; //150
 }//setup
 
-void circleRow(int startX, int endX, int y, int d) {
-  while (startX < width) {
-    circle(startX, y, d);
-    startX += d;
+void circleRow(int d) {
+  for (int x = 50; x < width; x += d){
+  for (int y = 50; y < height; y += d)
+    circle (x, y, d);
   }
-  if (movingY > 500) {
+  if (movingY > height) {
     movingY = 150;
   } else if (movingX > 450) {
     movingY += 100; // To not move down, change "100" to "0"
@@ -22,12 +22,12 @@ void circleRow(int startX, int endX, int y, int d) {
   } else {
     fill(#ff00ff);
     circle(movingX, movingY, 2*radius);
-    movingX += 100; // To wrap around vertically, change "movingX" to "movingY"
+    movingX += 100;//speed // To wrap around vertically, change "movingX" to "movingY"
   }
 }//circleRow
 
 void draw() {
   background(255);
   fill(#00ffff);
-  circleRow(50, 450, 50, 2*radius);
+  circleRow(2*radius);
 }//draw
