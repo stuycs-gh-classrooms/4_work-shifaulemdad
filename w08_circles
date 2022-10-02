@@ -42,7 +42,7 @@ void circleRow(int d) {
     circle(movingX, movingY, 10);
     //fill(#ff00ff);
     //circle(movingX, movingY, 2*radius);
-    movingY += 10;//speed
+    movingY += 100;//speed
   }
 }//circleRow
 
