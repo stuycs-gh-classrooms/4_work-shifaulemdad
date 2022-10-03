@@ -1,4 +1,4 @@
-//If it's too fast, please change speed in line 47 from "100" to "0".
+//If it's too fast, please change speed in line 47 from "100" to "1".
 
 int movingX;
 int movingY;
