@@ -1,3 +1,5 @@
+//If it's too fast, please change speed in line 47 from "100" to "0".
+
 int movingX;
 int movingY;
 int radius;
@@ -20,6 +22,8 @@ void circleRow(int d) {
     movingX += 100;
     movingY = 50;
   } else {
+    //fill(#ff00ff);
+    //circle(movingX, movingY, 2*radius);
     fill(0);
     circle(movingX, movingY, 100);
     fill(250);
@@ -40,12 +44,9 @@ void circleRow(int d) {
     circle(movingX, movingY, 20);
     fill(250);
     circle(movingX, movingY, 10);
-    //fill(#ff00ff);
-    //circle(movingX, movingY, 2*radius);
     movingY += 100;//speed
   }
-}//circleRow
-
+}
 void draw() {
   background(255);
   fill(#00ffff);
