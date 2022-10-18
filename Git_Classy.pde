@@ -1,6 +1,6 @@
 size(550,300);
 background(0);
-strokeWeight(5);
+strokeWeight(10);
 stroke(255,0,0);
 fill(0);
 circle(100, height/2, 150);
