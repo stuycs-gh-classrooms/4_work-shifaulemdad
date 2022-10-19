@@ -11,7 +11,7 @@ void setup() {
 }
 
 void drawLightning(int x, int y, int numParts) {
-  stroke(random(0, 250), random(0, 250), random(0, 250));
+  stroke(255);
   strokeWeight(10);
   while (y <= 500) {
     int nextx = int(random(x - 5, x + 5));
