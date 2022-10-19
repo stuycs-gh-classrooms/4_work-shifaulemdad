@@ -26,7 +26,7 @@ void draw() {
   //concentric circles
   drawCircle(angle, spiralRadius, width/2, sinAmplitude*2 + circRadius*3);
   angle++;
-  if (angle%360 == 0){
+  if (angle%360 <= 0){
     spiralRadius-=10;
   }
 }//draw
