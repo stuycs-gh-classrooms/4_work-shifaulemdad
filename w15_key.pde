@@ -22,19 +22,18 @@ void mouseClicked() {
   xvals[numPoints] = mouseX;
   yvals[numPoints] = mouseY;
   numPoints++;
-}
+}//mouseClicked
 
 void mouseDragged() {
   xvals[numPoints] = mouseX;
   yvals[numPoints] = mouseY;
   numPoints++;
-}
+}//mouseDragged
 
 void draw() {
   background(0);
   drawLines(xvals, yvals);
-}
-
+}//draw
 
 void moveLines(int[] xs, int[] ys, int xMod, int yMod) {
   if (xMod == 1) {
@@ -54,7 +53,7 @@ void moveLines(int[] xs, int[] ys, int xMod, int yMod) {
       ys[i] += yMod;
     }
   }
-}
+}//moveLines
 
 void keyPressed() {
   if (key == 'c') {
