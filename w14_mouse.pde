@@ -33,19 +33,4 @@ void mouseDragged() {
 void draw(){
   background(0);
   drawLines(xvals, yvals);
-  moveLines()
-}
-
-void keyPressed() {
-  if (key == 'c') {
-  background(0);
-  numPoints = 0; 
-  }
-}
-
-void moveLines(int[] xs, int[] ys, int xMod, int yMod) {
-  if (key == CODED) {
-    if (keyCode == UP) {
-      
-    }
 }
