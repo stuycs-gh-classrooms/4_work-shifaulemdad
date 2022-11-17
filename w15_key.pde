@@ -14,7 +14,7 @@ void drawLines(int[] xs, int[] ys) {
   stroke(255);
   strokeWeight(4);
   for (int i=1; i < numPoints; i++) {
-    line(xs[i-1], ys[i-1], xs[i] ,ys[i]);
+    line(xs[i-1], ys[i-1], xs[i], ys[i]);
   }//for
 }//drawLines
 
@@ -30,25 +30,46 @@ void mouseDragged() {
   numPoints++;
 }
 
-void draw(){
+void draw() {
   background(0);
   drawLines(xvals, yvals);
-  moveLines()
+}
+
+
+void moveLines(int[] xs, int[] ys, int xMod, int yMod) {
+  if (xMod == 1) {
+    for (int i = 0; i < numPoints; i++) {
+      xs[i] += xMod;
+    }
+  } else if (xMod == -1) {
+    for (int i = 0; i < numPoints; i++) {
+      xs[i] += xMod;
+    }
+  } else if (yMod == 1) {
+    for (int i = 0; i < numPoints; i++) {
+      ys[i] += yMod;
+    }
+  } else if (yMod == -1) {
+    for (int i = 0; i < numPoints; i++) {
+      ys[i] += yMod;
+    }
+  }
 }
 
 void keyPressed() {
   if (key == 'c') {
-  background(0);
-  numPoints = 0; 
+    background(0);
+    numPoints = 0;
   }
-}
-
-void moveLines(int[] xs, int[] ys, int xMod, int yMod) {
   if (key == CODED) {
     if (keyCode == UP) {
-    xs = xvals+10;
+      moveLines(xvals, yvals, 0, -1);
     } else if (keyCode == DOWN) {
-    xs = yvals-10;
-    } 
+      moveLines(xvals, yvals, 0, 1);
+    } else if (keyCode == RIGHT) {
+      moveLines(xvals, yvals, -1, 0);
+    } else if (keyCode == LEFT) {
+      moveLines(xvals, yvals, 1, 0);
+    }
   }
-}//movLines
+}//keyPressed
