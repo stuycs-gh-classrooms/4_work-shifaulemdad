@@ -1,3 +1,4 @@
+
 class Ball {
 
   int cx, cy;
@@ -18,6 +19,7 @@ class Ball {
   }//resetBall
 
   void display() {
+    fill(random(255),random(255),random(255));
     circle(cx, cy, radius * 2);
   }//display
 
