@@ -6,14 +6,14 @@ void setup() {
   background(0);
   score = 0;
 
-  balls = new Ball[10];
+  balls = new Ball[20];
   setupBalls();
 }//setup
 
 void setupBalls() {
   for (int i=0; i<balls.length; i++) {
     balls[i] = new Ball();
-  }//loop through array, creating new Ball objects
+  }
 }//setupBalls
 
 void draw() {
