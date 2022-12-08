@@ -14,45 +14,38 @@ color GRASS_COLOR = #49B90D;
 //Driver variables
 boolean burning = false;
 int grassDensity = 75;
-int numTracts = 10;
 int tractLength = 20;
-Land[][] grid;
+Land grid[][];
 
 
 void setup() {
   size(700, 350);
   frameRate(5);
-  grid = new Land[numTracts][tractLength];
-  for (int r=0; r < grid.length; r++) {
-    setupLand(grid[r], tractLength, grassDensity, r);
-  }
-  for (int r=0; r < grid.length; r++) {
-    showLand(grid[r]);
-  }
+  grid = new Land[10][20];
+    setupLand(grid, grid.length, tractLength, grassDensity);
+    showLand(grid);
 }//setup
 
 void draw() {
-  for (int r=0; r < grid.length; r++) {
-    showLand(grid[r]);
-  }
+    showLand(grid);
   if (burning) {
-    for (int r=0; r < grid.length; r++) {
-      liveFire(grid[r]);
-    }
+
+    liveFire(grid);
   }//burning
 }//draw
 
 
-void setupLand(Land[] row, int numPlots, float density, int r) {
+void setupLand(Land[][] field, int numRows, int numPlots, float density) {
   //figure out size of each plot of land
   int plotSize = width / numPlots;
 
   //instantiate each Land object
-  for (int i=0; i<row.length; i++) {
+  for (int i=0; i<numRows; i++) {
+    for (int r=0; r<field[i].length; r++){
     int type = DIRT;
 
     //first Land object should be FIRE
-    if (i == 0) {
+    if (r == 0) {
       type = FIRE;
     }//start with fire
 
@@ -62,29 +55,34 @@ void setupLand(Land[] row, int numPlots, float density, int r) {
     }//grass land
 
     //creates a new land at (x, y) with size plotSize and type
-    row[i] = new Land(i*plotSize, r*plotSize, plotSize, type);
+    field[i][r] = new Land(r*plotSize, i * plotSize, plotSize, type);
+    }
   }//setup loop
 }//setupLand
 
-void showLand(Land[] row) {
-  for (int i=0; i<row.length; i++) {
-    row[i].display();
-  }
+void showLand(Land[][] field) {
+for (int r=0; r < field.length; r++) { //loop over each or the arrays
+  for(int i=0; i < field[r].length; i++) { //loop over each element in each array
+    field[r][i].display();
+  }//for i
+}//for r
+
 }//showLand
 
-
-void liveFire(Land[] row) {
+void liveFire(Land[][] field) {
+  for (int r=0;r<field.length; r++){
   //First, check Land objects to the left, apply state change rules.
   //Assume nothing useful to the left of row[0]
-  row[0].updateNextState(0);
-  for (int i=1; i<row.length; i++) {
-    row[i].updateNextState(row[i-1].state);
+  field[r][0].updateNextState(0);
+  for (int i=1; i<field[r].length; i++) {
+    field[r][i].updateNextState(field[r][i-1].state);
   }//set nextStates for all plots
 
   //Based on potential state changes from updateNextState
-  for (int i=0; i<row.length; i++) {
-    row[i].changeState();
+  for (int i=0; i<field[r].length; i++) {
+    field[r][i].changeState();
   }//change states
+  }
 }//liveFire
 
 
@@ -97,8 +95,8 @@ void keyPressed() {
   }//start burning
   else if (key == 'r') {
     burning = false;
-    for (int r=0; r < grid.length; r++) {
-      setupLand(grid[r], tractLength, grassDensity, r);
-    }
+    for (int i=0; i<grid.length; i++) {
+    setupLand(grid, tractLength, grassDensity,i);
+  }
   }
 }
