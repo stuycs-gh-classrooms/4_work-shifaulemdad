@@ -45,4 +45,4 @@ class Land {
     state = nextState;
   }//changeState
 
-}//Land class
+}//Land
